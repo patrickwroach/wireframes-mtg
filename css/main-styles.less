@@ -10,13 +10,13 @@
 @color-light: white;
 @color-dark: @Onyx;
 @color-highlight-mid-import: @Soft-Gold;
-@color-highlight-import:@Turquoise;
+@color-highlight-import: @Turquoise;
 @background-color: lighten(@Light-Grey, 40%);
 
 //Static Reused Heights and Widths
 @nav-height: 64px;
-@footer-height:32px;
-@section-padding:25px;
+@footer-height: 32px;
+@section-padding: 25px;
 
 //General Site Structure Re-writes
 //Top Nav
@@ -37,37 +37,36 @@ nav {
         height: 100%;
       }
     }
-    ul{
-        li{
-            a{
-                &.btn{
-                    &.sidenav-trigger{
-                        color:@color-light;
-                        height:40px;
-                        margin-top:-5px;
-                        background: @color-highlight-import;
-                        
-                      
-                        i{
-                            margin-right:5px;
-                            vertical-align: middle;
-                        }
-                        
-                       
-                        
-                    }
 
-                }
+    ul {
+      li {
+        a {
+          &.btn {
+            &.sidenav-trigger {
+              color: @color-light;
+              height: 40px;
+              margin-top: -5px;
+              background: @color-highlight-import;
+
+              i {
+                margin-right: 5px;
+                vertical-align: middle;
+              }
+
             }
+
+          }
         }
+      }
     }
-   
+
   }
 }
 
 footer {
-    box-sizing: border-box;
-    box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
   &.page-footer {
     padding: 0;
     height: @footer-height;
@@ -76,11 +75,12 @@ footer {
     display: table;
 
     .container {
-        display: table-cell;
-        vertical-align: middle;
+      display: table-cell;
+      vertical-align: middle;
+
       .footer-copyright {
         background: transparent;
-      
+
         min-height: 25px;
       }
     }
@@ -89,23 +89,36 @@ footer {
 
 .section {
   background: @background-color;
-  
-  padding:@section-padding;
- 
+
+  padding: @section-padding;
+
   &.full-page {
- 
-    min-height:~"calc(100vh - @{nav-height} - @{footer-height})";
+
+    min-height: ~"calc(100vh - @{nav-height} - @{footer-height})";
   }
 }
 
-#ranking-board{
-    box-sizing: border-box; 
-    min-height:~"calc(100vh - @{nav-height} - @{footer-height} - (2*@{section-padding}))";
-    h2{
-        margin-top:0;
+#ranking-board {
+  box-sizing: border-box;
+  min-height: ~"calc(100vh - @{nav-height} - @{footer-height} - (2*@{section-padding}))";
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .row {
+    margin-bottom: 0;
+  }
+
+}
+@media only screen and (max-width: 400px) {
+  nav {
+    .nav-wrapper {
+      #logo-container {
+        img {
+          padding: 20px 0;
+        }
+      }
     }
-    .row{
-        margin-bottom:0;
-    }
-  
+  }
 }
