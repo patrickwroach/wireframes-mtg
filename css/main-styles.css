@@ -1,0 +1,61 @@
+nav {
+  position: relative;
+  background: white;
+  height: 64px;
+}
+nav .nav-wrapper #logo-container {
+  height: 100%;
+  width: auto;
+  padding: 5px 0;
+  box-sizing: border-box;
+}
+nav .nav-wrapper #logo-container img {
+  width: auto;
+  height: 100%;
+}
+nav .nav-wrapper ul li a.btn.sidenav-trigger {
+  color: white;
+  height: 40px;
+  margin-top: -5px;
+  background: #26a69a;
+}
+nav .nav-wrapper ul li a.btn.sidenav-trigger i {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+footer {
+  box-sizing: border-box;
+  box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+footer.page-footer {
+  padding: 0;
+  height: 32px;
+  width: 100%;
+  background: #dadada;
+  display: table;
+}
+footer.page-footer .container {
+  display: table-cell;
+  vertical-align: middle;
+}
+footer.page-footer .container .footer-copyright {
+  background: transparent;
+  min-height: 25px;
+}
+.section {
+  background: #f3f3f3;
+  padding: 25px;
+}
+.section.full-page {
+  min-height: calc(100vh - 64px - 32px);
+}
+#ranking-board {
+  box-sizing: border-box;
+  min-height: calc(100vh - 64px - 32px - (2*25px));
+}
+#ranking-board h2 {
+  margin-top: 0;
+}
+#ranking-board .row {
+  margin-bottom: 0;
+}

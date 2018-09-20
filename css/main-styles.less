@@ -1,0 +1,111 @@
+//Color Library
+@Rose-Gold: #bd8c7d;
+@Soft-Gold: #d1bfa7;
+@Silver: #8e8e90;
+@Onyx: #49494b;
+@Light-Grey: #8d8d8d;
+@Turquoise: #26a69a;
+
+//Semantic Colors Names
+@color-light: white;
+@color-dark: @Onyx;
+@color-highlight-mid-import: @Soft-Gold;
+@color-highlight-import:@Turquoise;
+@background-color: lighten(@Light-Grey, 40%);
+
+//Static Reused Heights and Widths
+@nav-height: 64px;
+@footer-height:32px;
+@section-padding:25px;
+
+//General Site Structure Re-writes
+//Top Nav
+nav {
+  position: relative;
+  background: @color-light;
+  height: @nav-height;
+
+  .nav-wrapper {
+    #logo-container {
+      height: 100%;
+      width: auto;
+      padding: 5px 0;
+      box-sizing: border-box;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+    ul{
+        li{
+            a{
+                &.btn{
+                    &.sidenav-trigger{
+                        color:@color-light;
+                        height:40px;
+                        margin-top:-5px;
+                        background: @color-highlight-import;
+                        
+                      
+                        i{
+                            margin-right:5px;
+                            vertical-align: middle;
+                        }
+                        
+                       
+                        
+                    }
+
+                }
+            }
+        }
+    }
+   
+  }
+}
+
+footer {
+    box-sizing: border-box;
+    box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  &.page-footer {
+    padding: 0;
+    height: @footer-height;
+    width: 100%;
+    background: darken(@background-color, 10%);
+    display: table;
+
+    .container {
+        display: table-cell;
+        vertical-align: middle;
+      .footer-copyright {
+        background: transparent;
+      
+        min-height: 25px;
+      }
+    }
+  }
+}
+
+.section {
+  background: @background-color;
+  
+  padding:@section-padding;
+ 
+  &.full-page {
+ 
+    min-height:~"calc(100vh - @{nav-height} - @{footer-height})";
+  }
+}
+
+#ranking-board{
+    box-sizing: border-box; 
+    min-height:~"calc(100vh - @{nav-height} - @{footer-height} - (2*@{section-padding}))";
+    h2{
+        margin-top:0;
+    }
+    .row{
+        margin-bottom:0;
+    }
+  
+}
