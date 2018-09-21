@@ -14,10 +14,11 @@
 @background-color: lighten(@Light-Grey, 40%);
 @ranking-border-color: @color-light;
 
-//Static Reused Heights and Widths
+//Static Reused Numbers
 @nav-height: 64px;
 @footer-height: 32px;
 @section-padding: 25px;
+@animation-delay: 2s;
 
 //General Site Structure Re-writes
 //Top Nav
@@ -26,16 +27,20 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: url(/images/bg-Unbridled-Growth.jpg) no-repeat center center fixed; 
+  background: url("/images/bg-Unbridled-Growth.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   position: absolute;
-  z-index:-1;
-  -webkit-filter: sepia(.8);
-  filter: sepia(.8);
- 
+  z-index: -1;
+  -webkit-filter: sepia(.5);
+  filter: sepia(.5);
+  animation: fadeInBGFilter;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 
 }
 
@@ -190,98 +195,123 @@ footer {
   }
 }
 
-#ranking-board {
-  box-sizing: border-box;
-  width: 50%;
-  min-width: 250px;
-  margin: 0 auto;
-  min-height: ~"calc(100vh - @{nav-height} - @{footer-height} - (2*@{section-padding}))";
-  position: relative;
+#ranking-wrapper {
   text-align: center;
-  color:@color-light;
-  .h1, li{
-    padding:5px;
-    background: #26a69a
-  }
-  ul {
-    margin: 0 auto;
-    width: 50%;
-    li{
-      margin:5px 0;
-    }
-  }
-  #ranking-border {
-    width: 100%;
-    height: ~"calc(100vh - @{nav-height} - @{footer-height} - (2*@{section-padding}))";
-    position: absolute;
-    top: 0;
-    left: 0;
 
-    div {
-      height: 2px;
-      width: 2px;
-      background: @ranking-border-color;
-      position: absolute;
-      animation-duration: 1s;
-
-      &.vert {
-        animation-name: growVert;
-        height: 100%;
-        left: 0;
-        transform-origin: top;
-
-        &.right {
-          left: initial;
-          right: 0;
-          transform-origin: bottom;
-
-        }
-      }
-
-      &.horz {
-        animation-name: growHorz;
-        width: 100%;
-        top: 0;
-        transform-origin: right;
-
-        &.top {
-          height: 1px;
-        }
-
-        &.bottom {
-          top: initial;
-          bottom: 0;
-          transform-origin: left;
-        }
-      }
-    }
-
-  }
-
-  h2 {
+  h1 {
+    font-size: 50px;
     margin-top: 0;
-    
+    margin-bottom: 10px;
+    line-height: 1;
+    font-variant: small-caps;
+    font-weight: 700;
+    color: @color-light;
+
   }
 
-  .row {
-    margin-bottom: 0;
+  #ranking-board {
+    box-sizing: border-box;
+    width: 50%;
+    min-width: 300px;
+    margin: 0 auto;
+    @ranking-board-heading: 60px;
+    height: ~"calc(100vh - @{nav-height} - @{footer-height} - @{ranking-board-heading} - (2*@{section-padding}))";
+    position: relative;
+    display: table;
+
+    .vert-centerer {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    color: @color-light;
+
+    ol {
+      min-width: 275px;
+      margin: 0 auto;
+      width: 50%;
+
+      li {
+        margin: 5px 0;
+        padding: 5px;
+        background: #26a69a;
+        animation-name: bigEntrance;
+        -webkit-animation-name: bigEntrance;
+        animation-duration: 1.6s;
+        -webkit-animation-duration: 1.6s;
+        animation-timing-function: ease-out;
+        -webkit-animation-timing-function: ease-out;
+        visibility: visible !important;
+       
+      }
+    }
+
+    #ranking-border {
+      width: 100%;
+      height: ~"calc(100vh - @{nav-height} - @{footer-height} - @{ranking-board-heading} - (2*@{section-padding}))";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      div {
+        height: 2px;
+        width: 2px;
+        background: @ranking-border-color;
+        position: absolute;
+        animation-duration: 1s;
+       
+
+        &.vert {
+          animation-name: growVert;
+          height: 100%;
+          left: 0;
+          transform-origin: top;
+
+          &.right {
+            left: initial;
+            right: 0;
+            transform-origin: bottom;
+
+          }
+        }
+
+        &.horz {
+          animation-name: growHorz;
+          width: 100%;
+          top: 0;
+          transform-origin: right;
+
+          &.bottom {
+            top: initial;
+            bottom: 0;
+            transform-origin: left;
+          }
+        }
+      }
+
+    }
+
+    h2 {
+      margin-top: 0;
+
+    }
+
+    .row {
+      margin-bottom: 0;
+    }
+
   }
 
 }
-
-
-
-@media only screen and (orientation : portrait){
-  #app-wrapper {    
+@media only screen and (orientation : portrait) {
+  #app-wrapper {
     img#cyclingBG {
-      height:100%;
-      width:auto;
+      height: 100%;
+      width: auto;
     }
   }
-  
+
 }
-
-
 @media only screen and (max-width: 400px) {
   nav {
     .nav-wrapper {
@@ -306,5 +336,88 @@ footer {
     transform: scaleX(0);
   }
 }
-@keyframes fadeInBGOpac {
+@keyframes fadeInBGFilter {
+  0% {
+    -webkit-filter: sepia(0);
+    filter: sepia(0);
   }
+
+  50% {
+    -webkit-filter: sepia(0);
+    filter: sepia(0);
+
+  }
+
+}
+@keyframes bigEntrance {
+  0% {
+    transform: translateY(10px);
+    opacity: .2;
+  }
+
+  30% {
+
+    opacity: 1;
+  }
+
+  45% {
+
+    opacity: 1;
+  }
+
+  60% {
+
+    opacity: 1;
+  }
+
+  75% {
+
+    opacity: 1;
+  }
+
+  90% {
+
+    opacity: 1;
+  }
+
+  100% {
+
+    opacity: 1;
+  }
+}
+@-webkit-keyframes bigEntrance {
+  0% {
+    transform: translateY(10px);
+    opacity: .2;
+  }
+
+  30% {
+
+    opacity: 1;
+  }
+
+  45% {
+
+    opacity: 1;
+  }
+
+  60% {
+
+    opacity: 1;
+  }
+
+  75% {
+
+    opacity: 1;
+  }
+
+  90% {
+
+    opacity: 1;
+  }
+
+  100% {
+
+    opacity: 1;
+  }
+}

@@ -39,7 +39,8 @@
     </div>
   </nav>
   <div class="section full-page image-background-overlay">
-    <div class="container">
+    <div id="ranking-wrapper" class="container">
+      <h1>Rankings</h1>
       <div id="ranking-board">
         <div id="ranking-border">
           <div class="vert left"></div>
@@ -47,52 +48,52 @@
           <div class="horz top"></div>
           <div class="horz bottom"></div>
         </div>
-        <h2 class="header center">Rankings</h1>
-          <div class="row center">
-            <ul id="rankings">
-              <li>Patrick Roach -
-                <span>2883</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
-              <li>Some other Nerd -
-                <span>1110</span>
-              </li>
+
+        <div class="vert-centerer">
+          <ol id="rankings">
+            <li style="animation-duration:.2s">Patrick Roach -
+              <span>2883</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
+            <li>Some other Nerd -
+              <span>1110</span>
+            </li>
 
 
-            </ul>
-          </div>
+          </ol>
+        </div>
       </div>
     </div>
   </div>
@@ -112,6 +113,14 @@
 
 
   <!--  Scripts-->
+  <script>
+    var ol = document.getElementById("rankings");
+    var items = ol.getElementsByTagName("li");
+    for (var i = 0; i < items.length; i++) {
+      console.log( items[i]);
+      items[i].style.animationDuration=.2+(i/3)+"s";     
+    }
+  </script>
 
 
   <script src="js/idedElementToggle.js"></script>
