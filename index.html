@@ -13,29 +13,40 @@
 </head>
 
 <body>
+  <div id="cycling-background-container"></div>
   <nav role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">
         <img src="./images/logo.svg" />
       </a>
-      <ul class="right">
+      <ul class="menu">
         <li>
-          <a href="#" data-target="nav-mobile" class="sidenav-trigger btn waves-effect waves-light golden">
+          <a href="#" class="btn waves-effect waves-light golden" onclick="idedElementToggle('match-logger')">
             <i class="material-icons">note_add</i>Log a match
           </a>
       </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li>
-          <a href="#" class="sidenav-close">Close</a>
-        </li>
-      </ul>
+    </div>
+    <div id="match-logger">
+      <div class="background-click-container" onclick="idedElementToggle('match-logger')"></div>
+      <div class="section" onclick="">
+        <ul>
+          <li>
+            <a href="#" class="match-log-toggle" onclick="idedElementToggle('match-logger')">Close</a>
+          </li>
+        </ul>
+      </div>
 
     </div>
   </nav>
-  <div class="section full-page">
+  <div class="section full-page image-background-overlay">
     <div class="container">
       <div id="ranking-board">
+        <div id="ranking-border">
+          <div class="vert left"></div>
+          <div class="vert right"></div>
+          <div class="horz top"></div>
+          <div class="horz bottom"></div>
+        </div>
         <h2 class="header center">Rankings</h1>
           <div class="row center">
             <ul id="rankings">
@@ -101,9 +112,9 @@
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+
+
+  <script src="js/idedElementToggle.js"></script>
 
 </body>
 
