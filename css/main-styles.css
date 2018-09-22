@@ -19,7 +19,7 @@ body {
   background: url("images/bg-Unbridled-Growth.jpg");
   position: fixed;
   z-index: -1;
-  -webkit-filter: sepia(0.5);
+  -webkit-filter: sepia(0.9);
   filter: sepia(0.5);
   animation: fadeInBGFilter;
   animation-duration: 10s;
@@ -100,7 +100,7 @@ nav #match-logger-container .section {
   width: 75%;
 }
 nav #match-logger-container .section h3 {
-  margin-top: 0px;
+  margin-top: 0;
 }
 nav #match-logger-container .section p {
   margin: 25px 0;
@@ -184,23 +184,35 @@ footer.page-footer .container .footer-copyright p {
   margin: 0 auto;
   height: calc(100vh - 64px - 32px - 60px - (2*25px));
   position: relative;
-  display: table;
   min-height: 500px;
   min-width: 300px;
-  color: white;
 }
-#ranking-wrapper #ranking-board .vert-centerer {
-  display: table-cell;
-  vertical-align: middle;
+#ranking-wrapper #ranking-board .scroll-catcher {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+#ranking-wrapper #ranking-board .scroll-catcher::-webkit-scrollbar-thumb {
+  background-color: red;
+}
+#ranking-wrapper #ranking-board .scroll-catcher .vert-centerer {
+  display: table;
+  height: 100%;
+  width: 100%;
 }
 #ranking-wrapper #ranking-board ul {
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
   margin: 0 auto;
-  width: 50%;
   list-style: inside;
   min-width: 275px;
+  padding-right: 5px;
+  text-align: center;
 }
 #ranking-wrapper #ranking-board ul li {
-  margin: 5px 0;
+  width: 275px;
+  margin: 5px auto;
   padding: 5px;
   background: #26a69a;
   animation-name: bigEntrance;
@@ -218,6 +230,7 @@ footer.page-footer .container .footer-copyright p {
   top: 0;
   left: 0;
   min-height: 500px;
+  z-index: -1;
 }
 #ranking-wrapper #ranking-board #ranking-border div {
   height: 2px;

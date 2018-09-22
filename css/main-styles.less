@@ -25,11 +25,10 @@
 body,
 html {
   height: 100%;
-  
- 
 
 }
-body{
+
+body {
   overflow-x: hidden;
 }
 
@@ -44,11 +43,10 @@ body{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background: url("./images/bg-Unbridled-Growth.jpg") ;
-
+  background: url("./images/bg-Unbridled-Growth.jpg");
   position: fixed;
   z-index: -1;
-  -webkit-filter: sepia(.5);
+  -webkit-filter: sepia(.9);
   filter: sepia(.5);
   animation: fadeInBGFilter;
   animation-duration: 10s;
@@ -109,8 +107,8 @@ nav {
   #match-logger-container {
     position: absolute;
     height: 100vh;
-    min-height:662px;
-    padding-bottom:2 rem;
+    min-height: 662px;
+    padding-bottom: 2 rem;
     width: 0;
     background-color: transparent;
     overflow: hidden;
@@ -119,21 +117,21 @@ nav {
     z-index: 99;
     display: block;
     transition-duration: .51s;
-    color:@color-dark;
-    text-align:center;
-    .close-button{
+    color: @color-dark;
+    text-align: center;
+
+    .close-button {
       position: absolute;
-      top:5px;
-      right:5px;
-      color:@color-highlight-import;      
-      float:right;
-      margin:0;
-    
-      .material-icons{
-        font-size:30px;
-      }     
+      top: 5px;
+      right: 5px;
+      color: @color-highlight-import;
+      float: right;
+      margin: 0;
+
+      .material-icons {
+        font-size: 30px;
+      }
     }
-       
 
     .background-click-container {
       width: 100%;
@@ -149,30 +147,32 @@ nav {
       z-index: 2;
       height: 100%;
       max-width: 300px;
-      min-height:662px;
+      min-height: 662px;
       width: 75%;
-      h3{
-        margin-top:0px;
+
+      h3 {
+        margin-top: 0;
       }
-      p{
-        margin:25px 0;
+
+      p {
+        margin: 25px 0;
         line-height: 1.25;
       }
-      input{
-        &[type="submit"]{
-          margin-top:25px;
-          background:@color-highlight-import;
-          border:none;
-          outline:none;
+
+      input {
+        &[type="submit"] {
+          margin-top: 25px;
+          background: @color-highlight-import;
+          border: none;
+          outline: none;
           box-shadow: none;
-          padding:10px;
-          color:@color-light;
+          padding: 10px;
+          color: @color-light;
           cursor: pointer;
           font-size: 25px;
           border-radius: 5px;
         }
       }
-     
 
     }
 
@@ -180,7 +180,6 @@ nav {
       width: 100%;
       background-color: fade(@color-dark, 50%);
 
-    
     }
 
   }
@@ -200,17 +199,17 @@ footer {
     .container {
       display: table-cell;
       vertical-align: middle;
-      width:95%;
+      width: 95%;
 
       .footer-copyright {
         background: transparent;
         min-height: 25px;
-        color:@color-dark;
-        float:right;
+        color: @color-dark;
+        float: right;
         text-align: right;
-       
-        p{
-          margin:0;
+
+        p {
+          margin: 0;
         }
       }
     }
@@ -261,25 +260,39 @@ footer {
     @ranking-board-heading: 60px;
     height: ~"calc(100vh - @{nav-height} - @{footer-height} - @{ranking-board-heading} - (2*@{section-padding}))";
     position: relative;
-    display: table;
+    
     min-height: 500px;
-    min-width:300px;
+    min-width: 300px;
 
-    .vert-centerer {
-      display: table-cell;
-      vertical-align: middle;
+    .scroll-catcher {
+      height:100%;
+      width:100%;
+      overflow: auto;
+      &::-webkit-scrollbar-thumb{
+        background-color: red;
+      }
+      .vert-centerer {
+        display: table;
+        height: 100%;
+        width: 100%;
+
+      }
     }
 
-    color: @color-light;
-
     ul {
+      color: @color-light;
+      display: table-cell;
+      vertical-align: middle;
       margin: 0 auto;
-      width: 50%;
       list-style: inside;
-      min-width:275px;
+      min-width: 275px;
+
+      padding-right: 5px;
+      text-align: center;
 
       li {
-        margin: 5px 0;
+        width: 275px;
+        margin: 5px auto;
         padding: 5px;
         background: #26a69a;
         animation-name: bigEntrance;
@@ -300,6 +313,7 @@ footer {
       top: 0;
       left: 0;
       min-height: 500px;
+      z-index: -1;
 
       div {
         height: 2px;
@@ -354,9 +368,8 @@ footer {
 }
 @media only screen and (orientation : portrait) {
   #cycling-background-container {
-    background-size:contain;
+    background-size: contain;
   }
-
 
 }
 @media only screen and (max-width: 400px) {
@@ -369,26 +382,29 @@ footer {
       }
     }
   }
-  #ranking-wrapper{
-    width:100%;
-    min-width:100px;
-    #ranking-board{
-      width:100%;
-      min-width:100px;
-      ul{
-        width:100%;
-        text-align:center;
-        min-width:100px;
-        li{
-          width:95%;
-          padding:5px 2px;
-          margin:2px auto;
+
+  #ranking-wrapper {
+    width: 100%;
+    min-width: 100px;
+
+    #ranking-board {
+      width: 100%;
+      min-width: 100px;
+
+      ul {
+        width: 100%;
+        text-align: center;
+        min-width: 100px;
+
+        li {
+          width: 95%;
+          padding: 5px 2px;
+          margin: 2px auto;
         }
       }
     }
   }
 }
-
 @keyframes growVert {
   0% {
 
