@@ -50,7 +50,7 @@
         </div>
 
         <div class="vert-centerer">
-          <ol id="rankings">
+          <ul id="rankings">
             <li style="animation-duration:.2s">Patrick Roach -
               <span>2883</span>
             </li>
@@ -114,8 +114,8 @@
 
   <!--  Scripts-->
   <script>
-    var ol = document.getElementById("rankings");
-    var items = ol.getElementsByTagName("li");
+    var ul = document.getElementById("rankings");
+    var items = ul.getElementsByTagName("li");
     for (var i = 0; i < items.length; i++) {
       console.log( items[i]);
       items[i].style.animationDuration=.2+(i/3)+"s";     

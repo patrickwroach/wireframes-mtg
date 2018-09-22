@@ -1,6 +1,11 @@
+html,
+body {
+  height: 100%;
+}
 #cycling-background-container {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
+  min-height: 500px;
   overflow: hidden;
   background: url("../images/bg-Unbridled-Growth.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -108,13 +113,14 @@ footer.page-footer .container .footer-copyright {
   width: 100%;
   background: #f3f3f3;
   padding: 25px;
+  min-height: 500px;
 }
 .section .container {
   width: 70%;
   margin: 0 auto;
 }
 .section.full-page {
-  min-height: calc(100vh - 64px - 32px);
+  height: calc(100vh - 64px - 32px);
 }
 .section.full-page.image-background-overlay {
   background: transparent;
@@ -145,12 +151,13 @@ footer.page-footer .container .footer-copyright {
   display: table-cell;
   vertical-align: middle;
 }
-#ranking-wrapper #ranking-board ol {
+#ranking-wrapper #ranking-board ul {
   min-width: 275px;
   margin: 0 auto;
   width: 50%;
+  list-style: inside;
 }
-#ranking-wrapper #ranking-board ol li {
+#ranking-wrapper #ranking-board ul li {
   margin: 5px 0;
   padding: 5px;
   background: #26a69a;
@@ -168,6 +175,7 @@ footer.page-footer .container .footer-copyright {
   position: absolute;
   top: 0;
   left: 0;
+  min-height: 520px;
 }
 #ranking-wrapper #ranking-board #ranking-border div {
   height: 2px;
