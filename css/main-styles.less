@@ -46,7 +46,7 @@ body{
   background-repeat: no-repeat;
   background: url("./images/bg-Unbridled-Growth.jpg") ;
 
-  position: absolute;
+  position: fixed;
   z-index: -1;
   -webkit-filter: sepia(.5);
   filter: sepia(.5);
@@ -353,12 +353,10 @@ footer {
 
 }
 @media only screen and (orientation : portrait) {
-  #app-wrapper {
-    img#cyclingBG {
-      height: 100%;
-      width: auto;
-    }
+  #cycling-background-container {
+    background-size:contain;
   }
+
 
 }
 @media only screen and (max-width: 400px) {
