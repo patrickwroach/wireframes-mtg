@@ -22,22 +22,26 @@
 
 //General Site Structure Re-writes
 //Top Nav
-html, 
-body{
-  height:100%;
-  overflow-x:hidden;
-  overflow-y: auto;
+body,
+html {
+  height: 100%;
+ 
+
 }
+
 #cycling-background-container {
   height: 100%;
   width: 100vw;
-  min-height:500px;
+  min-height: 500px;
   overflow: hidden;
-  background: url("../images/bg-Unbridled-Growth.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: url("../images/bg-Unbridled-Growth.jpg") ;
+
   position: absolute;
   z-index: -1;
   -webkit-filter: sepia(.5);
@@ -98,7 +102,7 @@ nav {
 
   }
 
-  #match-logger {
+  #match-logger-container {
     position: fixed;
     height: 100vh;
     width: 0;
@@ -109,6 +113,21 @@ nav {
     z-index: 99;
     display: block;
     transition-duration: .51s;
+    color:@color-dark;
+    text-align:center;
+    .close-button{
+      position: absolute;
+      top:5px;
+      right:5px;
+      color:@color-highlight-import;      
+      float:right;
+      margin:0;
+    
+      .material-icons{
+        font-size:30px;
+      }     
+    }
+       
 
     .background-click-container {
       width: 100%;
@@ -125,14 +144,28 @@ nav {
       height: 100vh;
       max-width: 300px;
       width: 75%;
-
-      ul {
-        li {
-          a {
-            color: transparent;
-          }
+      h3{
+        margin-top:0px;
+      }
+      p{
+        margin:25px 0;
+        line-height: 1.25;
+      }
+      input{
+        &[type="submit"]{
+          margin-top:25px;
+          background:@color-highlight-import;
+          border:none;
+          outline:none;
+          box-shadow: none;
+          padding:10px;
+          color:@color-light;
+          cursor: pointer;
+          font-size: 25px;
+          border-radius: 5px;
         }
       }
+     
 
     }
 
@@ -140,16 +173,7 @@ nav {
       width: 100%;
       background-color: fade(@color-dark, 50%);
 
-      .section {
-        ul {
-          li {
-            a {
-              color: @color-dark;
-            }
-          }
-        }
-
-      }
+    
     }
 
   }
@@ -224,7 +248,7 @@ footer {
     height: ~"calc(100vh - @{nav-height} - @{footer-height} - @{ranking-board-heading} - (2*@{section-padding}))";
     position: relative;
     display: table;
-    min-height:500px;
+    min-height: 500px;
 
     .vert-centerer {
       display: table-cell;
@@ -238,7 +262,6 @@ footer {
       margin: 0 auto;
       width: 50%;
       list-style: inside;
-     
 
       li {
         margin: 5px 0;
@@ -251,7 +274,7 @@ footer {
         animation-timing-function: ease-out;
         -webkit-animation-timing-function: ease-out;
         visibility: visible !important;
-       
+
       }
     }
 
@@ -261,7 +284,7 @@ footer {
       position: absolute;
       top: 0;
       left: 0;
-      min-height:500px;
+      min-height: 500px;
 
       div {
         height: 2px;
@@ -269,7 +292,6 @@ footer {
         background: @ranking-border-color;
         position: absolute;
         animation-duration: 1s;
-       
 
         &.vert {
           animation-name: growVert;
@@ -278,6 +300,7 @@ footer {
           transform-origin: top;
 
           &.right {
+            left: auto;
             left: initial;
             right: 0;
             transform-origin: bottom;
@@ -292,6 +315,7 @@ footer {
           transform-origin: right;
 
           &.bottom {
+            top: auto;
             top: initial;
             bottom: 0;
             transform-origin: left;

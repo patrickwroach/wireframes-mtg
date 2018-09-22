@@ -21,19 +21,61 @@
       </a>
       <ul class="menu">
         <li>
-          <a href="#" class="btn waves-effect waves-light golden" onclick="idedElementToggle('match-logger')">
+          <a href="#" id="match-log-toggle" class="btn waves-effect waves-light golden" onclick="idedElementToggle('match-logger-container')">
             <i class="material-icons">note_add</i>Log a match
           </a>
       </ul>
     </div>
-    <div id="match-logger">
-      <div class="background-click-container" onclick="idedElementToggle('match-logger')"></div>
-      <div class="section" onclick="">
-        <ul>
-          <li>
-            <a href="#" class="match-log-toggle" onclick="idedElementToggle('match-logger')">Close</a>
-          </li>
-        </ul>
+    <div id="match-logger-container">
+      <div class="background-click-container" onclick="idedElementToggle('match-logger-container')"></div>
+      <div class="section">
+        <a class="close-button" href="#" class="match-log-close" onclick="idedElementToggle('match-logger-container')"><i class="material-icons">cancel</i></a>
+        <form id="match-logger">
+          <p></p>
+          <h3>Log Match</h3>
+          <p>Who played?</p>
+          <select class="browser-default" form="match-logger" name="PlayerA">
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+          </select>
+          <select class="browser-default" form="match-logger" name="PlayerA">
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+          </select>
+          <p>Who won?</p>
+          <select class="browser-default" form="match-logger" name="PlayerA">
+            <option>Player A</option>
+            <option>Player B</option>
+          </select>
+          <p>When?</p>
+          <input type="date" />
+          <input type="time" />
+          <input type="submit" />
+        </form>
       </div>
 
     </div>
@@ -92,7 +134,7 @@
             </li>
 
 
-          </ol>
+            </ol>
         </div>
       </div>
     </div>
@@ -113,15 +155,33 @@
 
 
   <!--  Scripts-->
+  <!-- TO DO: STRIP THESE OUT INTO SEP FILES -->
+  <!--List animation cue-->
   <script>
     var ul = document.getElementById("rankings");
     var items = ul.getElementsByTagName("li");
     for (var i = 0; i < items.length; i++) {
-      console.log( items[i]);
-      items[i].style.animationDuration=.2+(i/3)+"s";     
+
+      items[i].style.animationDuration = .2 + (i / 3) + "s";
     }
   </script>
+  <!-- Temp Background Cycler -->
+  <script>
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+    let bg = document.getElementById("cycling-background-container");
 
+    const bgArr = ["bg-Unbridled-Growth.jpg", "bg-Llanowar-Envoy-Dominaria-MtG-Art.jpg", "bg-Ancient-Hellkite-MtG-Art-1024x640.jpg", "bg-Slinn-Voda-the-Rising-Deep-Dominaria-MtG-Art.jpg", "bg-Traxos-Scourge-of-Kroog-Dominaria-MtG-Art.jpg", "bg-Mana-Charged-Dragon-MtG-Art.jpg"];
+
+
+
+    bg.style.background = "url('../images/" + bgArr[getRandomInt(5)] + "')";
+    bg.style.backgroundRepeat = "no-repeat";
+    bg.style.backgroundSize = "cover";
+
+
+  </script>
 
   <script src="js/idedElementToggle.js"></script>
 

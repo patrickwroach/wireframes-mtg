@@ -1,19 +1,19 @@
-html,
-body {
+body,
+html {
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 #cycling-background-container {
   height: 100%;
   width: 100vw;
   min-height: 500px;
   overflow: hidden;
-  background: url("../images/bg-Unbridled-Growth.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: url("../images/bg-Unbridled-Growth.jpg");
   position: absolute;
   z-index: -1;
   -webkit-filter: sepia(0.5);
@@ -54,7 +54,7 @@ nav .nav-wrapper ul li a.btn.sidenav-trigger i {
 nav .nav-wrapper .menu {
   float: right;
 }
-nav #match-logger {
+nav #match-logger-container {
   position: fixed;
   height: 100vh;
   width: 0;
@@ -65,30 +65,56 @@ nav #match-logger {
   z-index: 99;
   display: block;
   transition-duration: .51s;
+  color: #49494b;
+  text-align: center;
 }
-nav #match-logger .background-click-container {
+nav #match-logger-container .close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #26a69a;
+  float: right;
+  margin: 0;
+}
+nav #match-logger-container .close-button .material-icons {
+  font-size: 30px;
+}
+nav #match-logger-container .background-click-container {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
-nav #match-logger .section {
+nav #match-logger-container .section {
   position: relative;
   z-index: 2;
   height: 100vh;
   max-width: 300px;
   width: 75%;
 }
-nav #match-logger .section ul li a {
-  color: transparent;
+nav #match-logger-container .section h3 {
+  margin-top: 0px;
 }
-nav #match-logger.active {
+nav #match-logger-container .section p {
+  margin: 25px 0;
+  line-height: 1.25;
+}
+nav #match-logger-container .section input[type="submit"] {
+  margin-top: 25px;
+  background: #26a69a;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  border-radius: 5px;
+}
+nav #match-logger-container.active {
   width: 100%;
   background-color: rgba(73, 73, 75, 0.5);
-}
-nav #match-logger.active .section ul li a {
-  color: #49494b;
 }
 footer {
   box-sizing: border-box;
@@ -194,6 +220,7 @@ footer.page-footer .container .footer-copyright {
   transform-origin: top;
 }
 #ranking-wrapper #ranking-board #ranking-border div.vert.right {
+  left: auto;
   left: initial;
   right: 0;
   transform-origin: bottom;
@@ -205,6 +232,7 @@ footer.page-footer .container .footer-copyright {
   transform-origin: right;
 }
 #ranking-wrapper #ranking-board #ranking-border div.horz.bottom {
+  top: auto;
   top: initial;
   bottom: 0;
   transform-origin: left;
