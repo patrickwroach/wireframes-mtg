@@ -25,6 +25,8 @@
 html, 
 body{
   height:100%;
+  overflow-x:hidden;
+  overflow-y: auto;
 }
 #cycling-background-container {
   height: 100%;
@@ -182,7 +184,7 @@ footer {
   width: 100%;
   background: @background-color;
   padding: @section-padding;
-  min-height: 500px;
+  min-height: 600px;
 
   .container {
     width: 70%;
@@ -222,6 +224,7 @@ footer {
     height: ~"calc(100vh - @{nav-height} - @{footer-height} - @{ranking-board-heading} - (2*@{section-padding}))";
     position: relative;
     display: table;
+    min-height:500px;
 
     .vert-centerer {
       display: table-cell;
@@ -258,7 +261,7 @@ footer {
       position: absolute;
       top: 0;
       left: 0;
-      min-height:520px;
+      min-height:500px;
 
       div {
         height: 2px;
