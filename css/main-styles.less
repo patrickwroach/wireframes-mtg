@@ -257,7 +257,6 @@ footer {
   #ranking-board {
     box-sizing: border-box;
     width: 50%;
-    min-width: 300px;
     margin: 0 auto;
     @ranking-board-heading: 60px;
     height: ~"calc(100vh - @{nav-height} - @{footer-height} - @{ranking-board-heading} - (2*@{section-padding}))";
@@ -273,7 +272,6 @@ footer {
     color: @color-light;
 
     ul {
-      min-width: 275px;
       margin: 0 auto;
       width: 50%;
       list-style: inside;
@@ -371,7 +369,23 @@ footer {
       }
     }
   }
+  #ranking-wrapper{
+    width:100%;
+    #ranking-board{
+      width:100%;
+      ul{
+        width:100%;
+        text-align:center;
+        li{
+          width:95%;
+          padding:5px 2px;
+          margin:2px auto;
+        }
+      }
+    }
+  }
 }
+
 @keyframes growVert {
   0% {
 

@@ -181,7 +181,6 @@ footer.page-footer .container .footer-copyright p {
 #ranking-wrapper #ranking-board {
   box-sizing: border-box;
   width: 50%;
-  min-width: 300px;
   margin: 0 auto;
   height: calc(100vh - 64px - 32px - 60px - (2*25px));
   position: relative;
@@ -194,7 +193,6 @@ footer.page-footer .container .footer-copyright p {
   vertical-align: middle;
 }
 #ranking-wrapper #ranking-board ul {
-  min-width: 275px;
   margin: 0 auto;
   width: 50%;
   list-style: inside;
@@ -265,6 +263,21 @@ footer.page-footer .container .footer-copyright p {
 @media only screen and (max-width: 400px) {
   nav .nav-wrapper #logo-container img {
     padding: 20px 0;
+  }
+  #ranking-wrapper {
+    width: 100%;
+  }
+  #ranking-wrapper #ranking-board {
+    width: 100%;
+  }
+  #ranking-wrapper #ranking-board ul {
+    width: 100%;
+    text-align: center;
+  }
+  #ranking-wrapper #ranking-board ul li {
+    width: 95%;
+    padding: 5px 2px;
+    margin: 2px auto;
   }
 }
 @keyframes growVert {
