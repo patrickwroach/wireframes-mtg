@@ -186,6 +186,7 @@ footer.page-footer .container .footer-copyright p {
   position: relative;
   display: table;
   min-height: 500px;
+  min-width: 300px;
   color: white;
 }
 #ranking-wrapper #ranking-board .vert-centerer {
@@ -196,6 +197,7 @@ footer.page-footer .container .footer-copyright p {
   margin: 0 auto;
   width: 50%;
   list-style: inside;
+  min-width: 275px;
 }
 #ranking-wrapper #ranking-board ul li {
   margin: 5px 0;
@@ -266,13 +268,16 @@ footer.page-footer .container .footer-copyright p {
   }
   #ranking-wrapper {
     width: 100%;
+    min-width: 100px;
   }
   #ranking-wrapper #ranking-board {
     width: 100%;
+    min-width: 100px;
   }
   #ranking-wrapper #ranking-board ul {
     width: 100%;
     text-align: center;
+    min-width: 100px;
   }
   #ranking-wrapper #ranking-board ul li {
     width: 95%;
