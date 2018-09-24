@@ -46,8 +46,8 @@ body {
   background: url("./images/bg-Unbridled-Growth.jpg");
   position: fixed;
   z-index: -1;
-  -webkit-filter: sepia(.9);
-  filter: sepia(.5);
+  -webkit-filter:  saturate(3);
+  filter: saturate(3);
   animation: fadeInBGFilter;
   animation-duration: 10s;
   animation-timing-function: ease-in-out;
@@ -254,22 +254,34 @@ footer {
   }
 
   #ranking-board {
+    @ranking-board-heading:60px;
     box-sizing: border-box;
-    width: 50%;
+    width: 35%;
+    padding:5px;
     margin: 0 auto;
-    @ranking-board-heading: 60px;
     height: ~"calc(100vh - @{nav-height} - @{footer-height} - @{ranking-board-heading} - (2*@{section-padding}))";
     position: relative;
-    
-    min-height: 500px;
-    min-width: 300px;
-
+      min-width: 300px;
     .scroll-catcher {
       height:100%;
       width:100%;
-      overflow: auto;
-      &::-webkit-scrollbar-thumb{
-        background-color: red;
+      overflow-x:hidden;
+      overflow-y: auto;
+         
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow:none;
+        
+        background-color: transparent;
+      }
+      
+     &::-webkit-scrollbar {
+        width: 12px;
+        background-color: transparent
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: @color-light;
       }
       .vert-centerer {
         display: table;
@@ -302,6 +314,19 @@ footer {
         animation-timing-function: ease-out;
         -webkit-animation-timing-function: ease-out;
         visibility: visible !important;
+        position: relative;
+        &:first-of-type{
+          ::before{
+            content:"\2726";
+            position: absolute;
+            left:5px
+          }
+          ::after{
+            content:"\2726";
+            position: absolute;
+            right:5px
+          }
+        }
 
       }
     }
@@ -309,10 +334,10 @@ footer {
     #ranking-border {
       width: 100%;
       height: ~"calc(100vh - @{nav-height} - @{footer-height} - @{ranking-board-heading} - (2*@{section-padding}))";
+      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      min-height: 500px;
       z-index: -1;
 
       div {
@@ -420,15 +445,11 @@ footer {
 }
 @keyframes fadeInBGFilter {
   0% {
-    -webkit-filter: sepia(0);
-    filter: sepia(0);
+    -webkit-filter:  saturate(.5);
+  filter: saturate(.5);
   }
 
-  50% {
-    -webkit-filter: sepia(0);
-    filter: sepia(0);
 
-  }
 
 }
 @keyframes bigEntrance {
