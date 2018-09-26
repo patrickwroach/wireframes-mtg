@@ -32,30 +32,6 @@ body {
   overflow-x: hidden;
 }
 
-#cycling-background-container {
-  height: 100%;
-  width: 100vw;
-  min-height: 500px;
-  overflow: hidden;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background: url("./images/bg-Unbridled-Growth.jpg");
-  position: fixed;
-  z-index: -1;
-  -webkit-filter: saturate(2);
-  filter: saturate(2);
-  animation: fadeInBGFilter;
-  animation-duration: 10s;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-
-}
-
 nav {
   position: relative;
   background: @color-light;
@@ -115,10 +91,10 @@ nav {
       display: none;
 
       li {
-        button{
-          margin-left:5px;
-          background:@color-highlight-import;
-      
+        button {
+          margin-left: 5px;
+          background: @color-highlight-import;
+
           &.drop-down-toggle {
             background-color: fade(@color-highlight-mid-import, 50%);
           }
@@ -136,7 +112,7 @@ nav {
           width: 150px;
           left: 65%;
           z-index: 99;
-          moz-box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          -moz-box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
           -webkit-box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
           box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 
@@ -174,7 +150,7 @@ nav {
       float: right;
       margin: 0;
       background: transparent;
-      border:none;
+      border: none;
 
       .material-icons {
         font-size: 30px;
@@ -287,6 +263,33 @@ footer {
   }
 }
 
+//IDed Elements 
+#cycling-background-container {
+  height: 100%;
+  width: 100vw;
+  min-height: 500px;
+  overflow: hidden;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: url("./images/bg-Unbridled-Growth.jpg");
+  position: fixed;
+  z-index: -1;
+  -webkit-filter: saturate(2);
+  filter: saturate(2);
+  animation: fadeInBGFilter;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+
+}
+//TO DO: BREAK INTO OWN FILES 
+//Ranking Page
+
 #ranking-wrapper {
   text-align: center;
 
@@ -319,7 +322,7 @@ footer {
 
       &::-webkit-scrollbar-track {
         -webkit-box-shadow: none;
-
+        box-shadow: none;
         background-color: transparent;
       }
 
@@ -443,6 +446,227 @@ footer {
   }
 
 }
+
+//Card Search
+#card-search-wrapper {
+  #search.container {
+    white-space: nowrap;
+
+    input {
+      @fullWidthForCalcs: "100%";
+
+      &[type=text] {
+        width: ~"calc(@{fullWidthForCalcs} - 110px)";
+      }
+
+      &[type=submit] {
+        width: 100px;
+        margin-left: 10px;
+        border: none;
+        color: @color-light;
+        background-color: @color-highlight-import;
+        box-sizing: border-box;
+
+      }
+
+    }
+  }
+
+  #easy-filter-tabs.container {
+
+    position: relative;
+
+    .checkbox {
+      width: 100px;
+      height: 36px;
+      margin: 0 5px 5px;
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+
+      label {
+        position: relative;
+        color: @color-light;
+
+        &:before {
+          width: 100px;
+          position: absolute;
+          left: 0;
+          content: "OWNED";
+          display: inline-block;
+          text-decoration: none;
+          color: @color-light;
+          text-align: center;
+          letter-spacing: .5px;
+          -webkit-transition: background-color .2s ease-out;
+          transition: background-color .2s ease-out;
+          cursor: pointer;
+          background: fade(@color-highlight-mid-import, 50%);
+          padding: 5px;
+          border-radius: 2px;
+          display: inline-block;
+          height: 36px;
+          line-height: 36px;
+          padding: 0 16px;
+          text-transform: uppercase;
+          vertical-align: middle;
+          -webkit-tap-highlight-color: transparent;
+          transition: .25s;
+        }
+
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &#CB-trade {
+        label {
+          &:before {
+            content: "For trade";
+          }
+        }
+
+      }
+
+      &#CB-league {
+        label {
+          &:before {
+            content: "In League";
+          }
+        }
+
+      }
+
+      input[type="checkbox"]:checked + label::before {
+        background-color: @color-highlight-import;
+      }
+
+      &.icon {
+        width: 36px;
+
+        label {
+          &:before {
+            content: "";
+            width: 36px;
+            background-color: transparent;
+            background-image: url("../images/red.svg");
+            padding: 0;
+            border-radius: none;
+            -webkit-filter: saturate(.0);
+            opacity: .5;
+            filter: saturate(.0);
+            vertical-align: middle;
+            -webkit-tap-highlight-color: transparent;
+            transition: .25s;
+          }
+        }
+
+        &#black {
+          label {
+            &:before {
+              background-image: url("../images/black.svg");
+
+            }
+          }
+
+        }
+
+        &#black {
+          label {
+            &:before {
+              background-image: url("../images/black.svg");
+
+            }
+          }
+
+        }
+
+        &#white {
+          label {
+            &:before {
+              background-image: url("../images/white.svg");
+
+            }
+          }
+
+        }
+
+        &#green {
+          label {
+            &:before {
+              background-image: url("../images/green.svg");
+
+            }
+          }
+
+        }
+
+        &#blue {
+          label {
+            &:before {
+              background-image: url("../images/blue.svg");
+
+            }
+          }
+
+        }
+
+        &#colorless {
+          label {
+            &:before {
+              background-image: url("../images/colorless.svg");
+
+            }
+          }
+
+        }
+
+        &#common {
+          label {
+            &:before {
+              background-image: url("../images/common.svg");
+
+            }
+          }
+
+        }
+
+        &#uncommon {
+          label {
+            &:before {
+              background-image: url("../images/uncommon.svg");
+
+            }
+          }
+
+        }
+
+        &#rare {
+          label {
+            &:before {
+              background-image: url("../images/rare.svg");
+
+            }
+          }
+
+        }
+
+        input[type="checkbox"]:checked + label::before {
+          background-color: transparent;
+          -webkit-filter: saturate(1);
+          filter: saturate(1);
+          opacity: 1;
+
+        }
+      }
+
+    }
+
+  }
+}
+
+//Responsive Adjustments for whole site
 @media only screen and (orientation : portrait) {
   #cycling-background-container {
     background-size: contain;
@@ -482,6 +706,13 @@ footer {
     }
   }
 
+  .section {
+    .container {
+      width: 90%;
+    }
+  }
+  // Responsive section for specific pages
+  //TO DO Store in specific pages style files
   #ranking-wrapper {
     width: 100%;
     min-width: 100px;
@@ -503,7 +734,17 @@ footer {
       }
     }
   }
+
+  #card-search-wrapper {
+    #search.container {
+      input{
+      
+      }
+    }
+  }
 }
+
+//Animations
 @keyframes growVert {
   0% {
 

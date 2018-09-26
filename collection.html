@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Ogre the Leaguening</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/main-style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <div id="cycling-background-container"></div>
+  <nav role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">
+        <img src="./images/logo.svg" />
+      </a>
+      <ul class="menu">
+        <li>
+          <a>Cards</a>
+        </li>
+        <li>
+          <a>Rules</a>
+        </li>
+        <li>
+          <a>Contact</a>
+        </li>
+        <li>
+          <button id="match-log-toggle" class="btn waves-effect waves-light" onclick="idedElementToggle('match-logger-container')">
+            <i class="material-icons">note_add</i>Log a match
+          </button>
+      </ul>
+      <ul class="mobile-menu">
+        <li>
+          <button id="match-log-toggle" class="btn waves-effect waves-light golden" onclick="idedElementToggle('match-logger-container')">
+            <i class="material-icons">note_add</i>Log a match
+          </button>
+        </li>
+        <li>
+          <button class="btn waves-effect waves-light golden drop-down-toggle" onclick="idedElementToggle('dd-menu')">
+            <i class="material-icons">menu</i>
+
+          </button>
+          <ul id="dd-menu" class="dropdown-content">
+            <li>
+              <a>Cards</a>
+            </li>
+            <li>
+              <a>Rules</a>
+            </li>
+            <li>
+              <a>Contact</a>
+            </li>
+          </ul>
+
+        </li>
+
+        <li>
+
+
+        </li>
+
+      </ul>
+    </div>
+    <div id="match-logger-container">
+      <div class="background-click-container" onclick="idedElementToggle('match-logger-container')"></div>
+      <div class="section">
+        <button class="close-button" href="#" class="match-log-close" onclick="idedElementToggle('match-logger-container')">
+          <i class="material-icons">cancel</i>
+        </button>
+        <form id="match-logger">
+          <p></p>
+          <h3>Log Match</h3>
+          <p>Who played?</p>
+          <select class="browser-default" form="match-logger" name="PlayerA">
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+          </select>
+          <select class="browser-default" form="match-logger" name="PlayerA">
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+            <option>Name</option>
+          </select>
+          <p>Who won?</p>
+          <select class="browser-default" form="match-logger" name="PlayerA">
+            <option>Player A</option>
+            <option>Player B</option>
+          </select>
+          <p>When?</p>
+          <input type="date" />
+          <input type="time" />
+          <input type="submit" />
+        </form>
+      </div>
+
+    </div>
+  </nav>
+  <div class="section full-page">
+    <div id="card-search-wrapper">
+      <div id="search" class="container">
+        <input type="text" placeholder="Search by card name, rules text, color etc..." />
+        <input type="submit" value="Search" class="btn"/>
+      </div>
+      <div id="easy-filter-tabs"  class="container">
+
+          <div id="CB-owned" class="checkbox">
+              <input type="checkbox" id="owned">
+              <label for="owned"></label>
+          </div>
+          <div id="CB-league" class="checkbox">
+              <input type="checkbox" id="in-league">
+              <label for="in-league"></label>
+          </div>
+          <div id="CB-trade" class="checkbox">
+              <input type="checkbox" id="for-trade">
+              <label for="for-trade"></label>
+          </div>
+          <div id="red" class="checkbox icon">
+              <input type="checkbox" id="red-mana">
+              <label for="red-mana"></label>
+          </div>
+          <div id="black" class="checkbox icon">
+              <input type="checkbox" id="black-mana">
+              <label for="black-mana"></label>
+          </div>
+      
+          <div id="white" class="checkbox icon">
+              <input type="checkbox" id="white-mana">
+              <label for="white-mana"></label>
+          </div>
+          <div id="green" class="checkbox icon">
+              <input type="checkbox" id="green-mana">
+              <label for="green-mana"></label>
+          </div>
+          <div id="blue" class="checkbox icon">
+              <input type="checkbox" id="blue-mana">
+              <label for="blue-mana"></label>
+          </div>
+          <div id="colorless" class="checkbox icon">
+              <input type="checkbox" id="colorless-mana">
+              <label for="colorless-mana"></label>
+          </div>
+          <div id="common" class="checkbox icon">
+              <input type="checkbox" id="common-card">
+              <label for="common-card"></label>
+          </div>
+          <div id="uncommon" class="checkbox icon">
+              <input type="checkbox" id="uncommon-card">
+              <label for="uncommon-card"></label>
+          </div>
+          <div id="rare" class="checkbox icon">
+              <input type="checkbox" id="rare-card">
+              <label for="rare-card"></label>
+          </div>
+        <!-- <input type="checkbox" class="small btn onyx off">Owned</button>
+        <input type="checkbox" class="small btn onyx off">In League</button>
+        <input type="checkbox" class="small btn onyx off">For trade</button>
+        <input type="checkbox" id="red-mana" unchecked />
+       -->
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="footer-copyright">
+
+      </div>
+    </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <!-- TO DO: STRIP THESE OUT INTO SEP FILES -->
+  <!--List animation cue-->
+  <script>
+    var ul = document.getElementById("rankings");
+    var items = ul.getElementsByTagName("li");
+    for (var i = 0; i < items.length; i++) {
+
+      items[i].style.animationDuration = .2 + (i / 3) + "s";
+    }
+  </script>
+  <!-- Temp Background Cycler -->
+  <script>
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+    let bg = document.getElementById("cycling-background-container");
+
+    const bgArr = ["bg-Unbridled-Growth.jpg", "bg-Llanowar-Envoy-Dominaria-MtG-Art.jpg", "bg-Ancient-Hellkite-MtG-Art-1024x640.jpg", "bg-Slinn-Voda-the-Rising-Deep-Dominaria-MtG-Art.jpg", "bg-Traxos-Scourge-of-Kroog-Dominaria-MtG-Art.jpg", "bg-Mana-Charged-Dragon-MtG-Art.jpg"];
+
+
+
+    bg.style.background = "url('./images/" + bgArr[getRandomInt(5)] + "')";
+    bg.style.backgroundRepeat = "no-repeat";
+    bg.style.backgroundSize = "cover";
+
+
+  </script>
+
+
+  <script src="js/idedElementToggle.js"></script>
+
+</body>
+
+</html>
